@@ -13,13 +13,16 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Grid,
 } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 import {
   Grade as StarIcon,
   Menu as MenuIcon,
   AcUnit as SnowIcon,
 } from "@material-ui/icons/";
+import AnimatedLinkButton from "../components/AnimatedLinkButton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  link: {
+    textDecoration: "none",
+    color: "yellow",
+  },
 }));
 const TopBar = ({ colorScheme, setColorScheme }) => {
   const classes = useStyles();
@@ -44,7 +51,6 @@ const TopBar = ({ colorScheme, setColorScheme }) => {
     right: false,
   });
   const toggleDrawer = (anchor, open) => (event) => {
-    console.log(anchor, open);
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -73,13 +79,25 @@ const TopBar = ({ colorScheme, setColorScheme }) => {
           <ListItemIcon>
             <SnowIcon />
           </ListItemIcon>
-          <ListItemText primary={"Weather"} />
+          <ListItemText
+            primary={
+              <Link className={classes.link} to="/">
+                Weather
+              </Link>
+            }
+          />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <StarIcon color="error" />
           </ListItemIcon>
-          <ListItemText primary={"Favorite"} />
+          <ListItemText
+            primary={
+              <Link className={classes.link} to="favorite">
+                Favorite
+              </Link>
+            }
+          />
         </ListItem>
       </List>
     </div>
@@ -88,35 +106,61 @@ const TopBar = ({ colorScheme, setColorScheme }) => {
   return (
     <AppBar position="sticky" className={classes.appBar}>
       <Toolbar>
-        <IconButton
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
-          onClick={toggleDrawer(anchor, true)}
+        <Grid
+          container
+          justify="flex-end"
+          direction="row"
+          spacing={2}
+          alignItems="center"
         >
-          <MenuIcon />
-        </IconButton>
-        <Drawer
-          anchor={anchor}
-          open={state[anchor]}
-          onClose={toggleDrawer(anchor, false)}
-        >
-          {list(anchor)}
-        </Drawer>
-        <Typography variant="h6" className={classes.title}>
-          Forecast Displayer
-        </Typography>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={colorScheme === "dark"}
-              onChange={handleChange}
-              name="darkMode"
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+            onClick={toggleDrawer(anchor, true)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Drawer
+            anchor={anchor}
+            open={state[anchor]}
+            onClose={toggleDrawer(anchor, false)}
+          >
+            {list(anchor)}
+          </Drawer>
+          <Typography variant="h6" className={classes.title}>
+            Forecast Displayer
+          </Typography>
+
+          <Grid item>
+            <AnimatedLinkButton
+              className={classes.link}
+              linkTo="favorite"
+              buttonText={"Favorite"}
             />
-          }
-          label="Dark Mode"
-        />
+          </Grid>
+          <Grid item>
+            <AnimatedLinkButton
+              className={classes.link}
+              linkTo="/"
+              buttonText={"Weather"}
+            />
+          </Grid>
+
+          <Grid item>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={colorScheme === "dark"}
+                  onChange={handleChange}
+                  name="darkMode"
+                />
+              }
+              label="Dark Mode"
+            />
+          </Grid>
+        </Grid>
       </Toolbar>
     </AppBar>
   );

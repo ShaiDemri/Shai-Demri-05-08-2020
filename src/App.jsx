@@ -1,11 +1,21 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+
+import { useMediaQuery, CssBaseline } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { useMediaQuery } from "@material-ui/core";
+
+import configureStore from "./store";
 import AppBar from "./components/AppBar";
-import ErrorBoundary from "./components/ErrorBoundary";
 import AppModule from "./module/AppModule";
+import ErrorBoundary from "./components/ErrorBoundary";
+
+const initialState = {
+  weather: [],
+  oneDayWeather: [],
+  favorite: [],
+};
+let store = configureStore(initialState);
 
 function App() {
   const [colorScheme, setColorScheme] = React.useState("dark");
@@ -37,15 +47,17 @@ function App() {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <AppBar colorScheme={colorScheme} setColorScheme={setColorScheme} />
-      <ErrorBoundary>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
         <BrowserRouter>
-          <AppModule />
+          <AppBar colorScheme={colorScheme} setColorScheme={setColorScheme} />
+          <ErrorBoundary>
+            <AppModule />
+          </ErrorBoundary>
         </BrowserRouter>
-      </ErrorBoundary>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

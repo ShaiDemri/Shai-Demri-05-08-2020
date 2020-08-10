@@ -29,7 +29,7 @@ const AnimatedButton = withStyles((theme) => ({
       },
     },
     "&:hover": {
-      animation: "$jiggle 0.5s 2",
+      animation: "$jiggle 0.5s infinite",
       animationTimingFunction: "ease-out",
     },
   },
