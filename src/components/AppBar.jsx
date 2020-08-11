@@ -81,7 +81,7 @@ const TopBar = ({ colorScheme, setColorScheme }) => {
           </ListItemIcon>
           <ListItemText
             primary={
-              <Link className={classes.link} to="/">
+              <Link className={classes.link} to="/Shai-Demri-05-08-2020">
                 Weather
               </Link>
             }
@@ -93,7 +93,10 @@ const TopBar = ({ colorScheme, setColorScheme }) => {
           </ListItemIcon>
           <ListItemText
             primary={
-              <Link className={classes.link} to="favorite">
+              <Link
+                className={classes.link}
+                to="/Shai-Demri-05-08-2020/favorite"
+              >
                 Favorite
               </Link>
             }
@@ -136,14 +139,14 @@ const TopBar = ({ colorScheme, setColorScheme }) => {
           <Grid item>
             <AnimatedLinkButton
               className={classes.link}
-              linkTo="favorite"
+              linkTo="/Shai-Demri-05-08-2020/favorite"
               buttonText={"Favorite"}
             />
           </Grid>
           <Grid item>
             <AnimatedLinkButton
               className={classes.link}
-              linkTo="/"
+              linkTo="/Shai-Demri-05-08-2020/"
               buttonText={"Weather"}
             />
           </Grid>
