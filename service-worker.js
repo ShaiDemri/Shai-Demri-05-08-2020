@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Shai-Demri-05-08-2020/precache-manifest.eadaf97955c6cfa205837e8c2da2ef5e.js"
+  "/Shai-Demri-05-08-2020/precache-manifest.ea5647321652cdaaecdace51a46c1234.js"
 );
 
 self.addEventListener('message', (event) => {
