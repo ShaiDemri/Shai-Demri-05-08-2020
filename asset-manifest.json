@@ -1,0 +1,34 @@
+{
+  "files": {
+    "static/js/0.23931e48.chunk.js": "/Shai-Demri-05-08-2020/static/js/0.23931e48.chunk.js",
+    "static/js/0.23931e48.chunk.js.map": "/Shai-Demri-05-08-2020/static/js/0.23931e48.chunk.js.map",
+    "main.js": "/Shai-Demri-05-08-2020/static/js/main.5350e185.chunk.js",
+    "main.js.map": "/Shai-Demri-05-08-2020/static/js/main.5350e185.chunk.js.map",
+    "runtime-main.js": "/Shai-Demri-05-08-2020/static/js/runtime-main.77277393.js",
+    "runtime-main.js.map": "/Shai-Demri-05-08-2020/static/js/runtime-main.77277393.js.map",
+    "static/js/3.991c3455.chunk.js": "/Shai-Demri-05-08-2020/static/js/3.991c3455.chunk.js",
+    "static/js/3.991c3455.chunk.js.map": "/Shai-Demri-05-08-2020/static/js/3.991c3455.chunk.js.map",
+    "static/js/4.3ecf5d97.chunk.js": "/Shai-Demri-05-08-2020/static/js/4.3ecf5d97.chunk.js",
+    "static/js/4.3ecf5d97.chunk.js.map": "/Shai-Demri-05-08-2020/static/js/4.3ecf5d97.chunk.js.map",
+    "static/js/5.afc5cb17.chunk.js": "/Shai-Demri-05-08-2020/static/js/5.afc5cb17.chunk.js",
+    "static/js/5.afc5cb17.chunk.js.map": "/Shai-Demri-05-08-2020/static/js/5.afc5cb17.chunk.js.map",
+    "static/js/6.d0fd0157.chunk.js": "/Shai-Demri-05-08-2020/static/js/6.d0fd0157.chunk.js",
+    "static/js/6.d0fd0157.chunk.js.map": "/Shai-Demri-05-08-2020/static/js/6.d0fd0157.chunk.js.map",
+    "static/js/7.79e38cfe.chunk.js": "/Shai-Demri-05-08-2020/static/js/7.79e38cfe.chunk.js",
+    "static/js/7.79e38cfe.chunk.js.map": "/Shai-Demri-05-08-2020/static/js/7.79e38cfe.chunk.js.map",
+    "static/js/8.8e0cd5f4.chunk.js": "/Shai-Demri-05-08-2020/static/js/8.8e0cd5f4.chunk.js",
+    "static/js/8.8e0cd5f4.chunk.js.map": "/Shai-Demri-05-08-2020/static/js/8.8e0cd5f4.chunk.js.map",
+    "index.html": "/Shai-Demri-05-08-2020/index.html",
+    "precache-manifest.eadaf97955c6cfa205837e8c2da2ef5e.js": "/Shai-Demri-05-08-2020/precache-manifest.eadaf97955c6cfa205837e8c2da2ef5e.js",
+    "service-worker.js": "/Shai-Demri-05-08-2020/service-worker.js",
+    "static/js/3.991c3455.chunk.js.LICENSE.txt": "/Shai-Demri-05-08-2020/static/js/3.991c3455.chunk.js.LICENSE.txt",
+    "static/js/4.3ecf5d97.chunk.js.LICENSE.txt": "/Shai-Demri-05-08-2020/static/js/4.3ecf5d97.chunk.js.LICENSE.txt",
+    "static/js/8.8e0cd5f4.chunk.js.LICENSE.txt": "/Shai-Demri-05-08-2020/static/js/8.8e0cd5f4.chunk.js.LICENSE.txt",
+    "static/media/page-404.png": "/Shai-Demri-05-08-2020/static/media/page-404.93430c7d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.77277393.js",
+    "static/js/3.991c3455.chunk.js",
+    "static/js/main.5350e185.chunk.js"
+  ]
+}
