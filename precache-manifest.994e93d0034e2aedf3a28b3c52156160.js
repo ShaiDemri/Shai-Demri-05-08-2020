@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f31b5a2bf11d42f082cb5b38377f9f05",
+    "revision": "75de46e16ebfafefd6c24dd707bc2048",
     "url": "/Shai-Demri-05-08-2020/index.html"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Shai-Demri-05-08-2020/static/js/8.8e0cd5f4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "920d87ce961007c779fb",
-    "url": "/Shai-Demri-05-08-2020/static/js/main.5350e185.chunk.js"
+    "revision": "e08746a435ba5e2ca0cc",
+    "url": "/Shai-Demri-05-08-2020/static/js/main.55c0a51c.chunk.js"
   },
   {
     "revision": "a8076db88af057401853",
