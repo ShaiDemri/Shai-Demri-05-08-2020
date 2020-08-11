@@ -14,9 +14,15 @@ const handleRouteChange = (Component) => {
 function AppModule() {
   return (
     <Switch>
-      <Redirect from="/Shai-Demri-05-08-2020" to="/" />
-      <Route path="/" exact render={handleRouteChange(Weather)} />
-      <Route path="/favorite" render={handleRouteChange(Favorite)} />
+      <Route
+        path="/Shai-Demri-05-08-2020"
+        exact
+        render={handleRouteChange(Weather)}
+      />
+      <Route
+        path="/Shai-Demri-05-08-2020/favorite"
+        render={handleRouteChange(Favorite)}
+      />
       <Route path="/404" render={handleRouteChange(PageNotFound)} />
       <Redirect from="*" to="/404" />
     </Switch>
