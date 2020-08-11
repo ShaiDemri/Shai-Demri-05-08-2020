@@ -1,11 +1,11 @@
 import axios from "axios";
 const API_KEY = "Jk0eCaZKTjS35inGGK8R9r8R0bFxgGB5";
 const fetchLocationCodeURL = (locationName) =>
-  `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${locationName}`;
+  `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${locationName}`;
 const fetchWeatherURL = (locationCode) =>
-  `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationCode}?apikey=${API_KEY}&metric=true`;
+  `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationCode}?apikey=${API_KEY}&metric=true`;
 const fetchOneDayWeatherURL = (locationCode) =>
-  `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationCode}?apikey=${API_KEY}&metric=true`;
+  `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationCode}?apikey=${API_KEY}&metric=true`;
 
 export const fetchLocationCode = (locationName) => async (dispatch) => {
   if (!locationName) {
