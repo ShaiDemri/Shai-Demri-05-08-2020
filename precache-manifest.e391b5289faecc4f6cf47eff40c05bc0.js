@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5f4613c37a0e34ef5d0bd4388a25e9cd",
+    "revision": "a66a4553a1acc9127b02f407aa813d10",
     "url": "/Shai-Demri-05-08-2020/index.html"
   },
   {
@@ -20,12 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Shai-Demri-05-08-2020/static/js/4.b67b7f38.chunk.js"
   },
   {
-    "revision": "a14ce7b8b407b31dbf5f",
-    "url": "/Shai-Demri-05-08-2020/static/js/5.a6d8cd8d.chunk.js"
+    "revision": "246c674bad35af8edae2",
+    "url": "/Shai-Demri-05-08-2020/static/js/5.2bfea59b.chunk.js"
   },
   {
-    "revision": "0ce9b7df991d0bfaef16",
-    "url": "/Shai-Demri-05-08-2020/static/js/6.5f9d7964.chunk.js"
+    "revision": "1317c74a7311f10f4bcb",
+    "url": "/Shai-Demri-05-08-2020/static/js/6.daf8fd84.chunk.js"
   },
   {
     "revision": "08e7d5b048181ab36129",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Shai-Demri-05-08-2020/static/js/main.b7cb0d2a.chunk.js"
   },
   {
-    "revision": "c952600d2dfbb5413b7b",
-    "url": "/Shai-Demri-05-08-2020/static/js/runtime-main.70d4f4a1.js"
+    "revision": "b78e55c5bbb23e7ad10f",
+    "url": "/Shai-Demri-05-08-2020/static/js/runtime-main.af021ba3.js"
   },
   {
     "revision": "93430c7d951241623a2de4bd7ecc809f",
