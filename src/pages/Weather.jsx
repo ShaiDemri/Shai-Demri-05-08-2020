@@ -15,9 +15,11 @@ import WeatehrCard from "../components/WeatherCard";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {
+  fetchWeather as fetchWeatherAction,
   fetchLocationCode as fetchLocationCodeAction,
   toggleLocationToFavorite as toggleLocationToFavoriteAction,
 } from "../store/actions";
+import LocationsDropdown from "../components/LocationsDropdown";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
@@ -27,21 +29,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Weather = ({
   weather,
-  favorite,
   locationKey,
+  locationsCode,
+  fetchWeather,
   fetchLocationCode,
   toggleLocationToFavorite,
 }) => {
   const classes = useStyles();
   const [searchTerm, setSearchTerm] = React.useState("Tel Aviv");
   const [toggleFavorite, setToggleFavorite] = React.useState(false);
+  const anchorRef = React.useRef(null);
 
   const onSearchClick = React.useCallback(() => {
-    const isFavorite =
-      favorite.filter((place) => place.key === locationKey).length > 0;
     setToggleFavorite(false);
     fetchLocationCode(searchTerm);
-  }, [favorite, fetchLocationCode, locationKey, searchTerm]);
+  }, [fetchLocationCode, searchTerm]);
 
   const onFavoriteClick = () => {
     setToggleFavorite((f) => !f);
@@ -56,6 +58,7 @@ const Weather = ({
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid xs={8} item className={classes.container}>
           <TextField
+            ref={anchorRef}
             id="city-search-field"
             placeholder="Enter a city to see the upcoming days weather!"
             fullWidth
@@ -83,6 +86,11 @@ const Weather = ({
           </Tooltip>
         </Grid>
       </Grid>
+      <LocationsDropdown
+        anchorRef={anchorRef}
+        locations={locationsCode}
+        fetchWeather={fetchWeather}
+      />
       <WeatehrCard weather={weather} />
     </Grid>
   );
@@ -90,6 +98,7 @@ const Weather = ({
 
 const mapStateToProps = (state) => {
   return {
+    locationsCode: state.locationsCode,
     weather: state.weather.DailyForecasts,
     locationKey: state.weather.Key,
     favorite: state.favorite,
@@ -101,6 +110,7 @@ const mapDispatchToProps = (dispatch) =>
     {
       fetchLocationCode: fetchLocationCodeAction,
       toggleLocationToFavorite: toggleLocationToFavoriteAction,
+      fetchWeather: fetchWeatherAction,
     },
     dispatch
   );

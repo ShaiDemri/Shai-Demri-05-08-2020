@@ -1,9 +1,18 @@
 import { combineReducers } from "redux";
 
+const fetchLocationCodeReducer = (state = [], action) => {
+  //   console.log("fetchLocationCodeReducer");
+  switch (action.type) {
+    case "FETCH_CITIES_CODE":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const fetchWeatherReducer = (state = [], action) => {
   //   console.log("fetchWeatherReducer");
   switch (action.type) {
-    case "FETCH_CITIES_CODE":
     case "FETCH_WEATHER":
       return action.payload;
     default:
@@ -70,6 +79,7 @@ const favoriteReducer = (state = [], action) => {
 };
 
 export default combineReducers({
+  locationsCode: fetchLocationCodeReducer,
   weather: fetchWeatherReducer,
   oneDayWeather: fetchOneDayWeatherReducer,
   favorite: favoriteReducer,

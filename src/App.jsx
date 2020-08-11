@@ -11,6 +11,7 @@ import AppModule from "./module/AppModule";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 const initialState = {
+  locationsCode: [],
   weather: [],
   oneDayWeather: [],
   favorite: [],
