@@ -1,6 +1,5 @@
 import axios from "axios";
-import { xorBy } from "lodash";
-const API_KEY = "SdJcdrRSNAvfbL5kK2cHLuxPGug9tlUE"; //TODO: move to env variable
+const API_KEY = "Jk0eCaZKTjS35inGGK8R9r8R0bFxgGB5";
 const fetchLocationCodeURL = (locationName) =>
   `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${locationName}`;
 const fetchWeatherURL = (locationCode) =>
@@ -9,6 +8,12 @@ const fetchOneDayWeatherURL = (locationCode) =>
   `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationCode}?apikey=${API_KEY}&metric=true`;
 
 export const fetchLocationCode = (locationName) => async (dispatch) => {
+  if (!locationName) {
+    return dispatch({
+      type: "FETCH_CITIES_CODE",
+      payload: [],
+    });
+  }
   try {
     const url = fetchLocationCodeURL(locationName);
     const response = await axios.get(url);

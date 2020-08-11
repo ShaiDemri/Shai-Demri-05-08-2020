@@ -52,6 +52,9 @@ const Weather = ({
 
   React.useEffect(() => {
     onSearchClick();
+    return () => {
+      fetchLocationCode();
+    };
   }, []);
   return (
     <Grid>

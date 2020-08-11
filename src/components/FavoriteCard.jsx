@@ -8,7 +8,6 @@ import {
   Button,
   makeStyles,
 } from "@material-ui/core";
-import getDayOfTheWeek from "../utils/getDayOfTheWeek";
 import getIconById from "../utils/getIconById";
 import { CelsiusToFahrenheit } from "../utils/convertTempUnits";
 import PropTypes from "prop-types";
@@ -116,5 +115,9 @@ const FavoriteCard = ({ favoriteWeather, favorite }) => {
       </Grid>
     </>
   );
+};
+FavoriteCard.propTypes = {
+  favoriteWeather: PropTypes.any,
+  favorite: PropTypes.array,
 };
 export default FavoriteCard;

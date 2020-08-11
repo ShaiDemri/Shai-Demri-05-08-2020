@@ -207,4 +207,7 @@ const WeatherCard = ({ weather = defaultWeather }) => {
     </>
   );
 };
+WeatherCard.propTypes = {
+  weather: PropTypes.array,
+};
 export default WeatherCard;
