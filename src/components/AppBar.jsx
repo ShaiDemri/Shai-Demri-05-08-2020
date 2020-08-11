@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     color: "yellow",
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
 }));
 const TopBar = ({ colorScheme, setColorScheme }) => {
