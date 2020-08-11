@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_KEY = "Jk0eCaZKTjS35inGGK8R9r8R0bFxgGB5";
+const API_KEY = process.env.REACT_APP_API_KEY;
 const fetchLocationCodeURL = (locationName) =>
   `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${locationName}`;
 const fetchWeatherURL = (locationCode) =>
