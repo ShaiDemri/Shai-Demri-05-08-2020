@@ -31,51 +31,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
 }));
-const defaultWeather = {
-  "212593": {
-    Date: "2020-08-10T07:00:00+03:00",
-    Unit: "C",
-    Temperature: {
-      Minimum: 23.7,
-      Maximum: 30,
-    },
-    Day: {
-      Icon: 2,
-      IconPhrase: "Mostly sunny",
-      HasPrecipitation: false,
-    },
-    Night: {
-      Icon: 34,
-      IconPhrase: "Mostly clear",
-      HasPrecipitation: false,
-    },
-  },
-  "215854": {
-    Date: "2020-08-10T07:00:00+03:00",
-    Unit: "C",
-    Temperature: {
-      Minimum: 25.1,
-      Maximum: 29.8,
-    },
-    Day: {
-      Icon: 3,
-      IconPhrase: "Partly sunny",
-      HasPrecipitation: false,
-    },
-    Night: {
-      Icon: 35,
-      IconPhrase: "Partly cloudy",
-      HasPrecipitation: false,
-    },
-  },
-};
-const FavoriteCard = ({
-  favoriteWeather = defaultWeather,
-  favorite = [
-    { key: "212593", name: "Tel Aviv" },
-    { key: "215854", name: "Yavne" },
-  ],
-}) => {
+
+const FavoriteCard = ({ favoriteWeather, favorite }) => {
   const classes = useStyles();
   const [partOfDay, setPartOfDay] = React.useState("Day");
   const [temperatureFahrenheit, setTemperatureFahrenheit] = React.useState(
@@ -125,7 +82,6 @@ const FavoriteCard = ({
         {favorite.map((fav) => {
           const weather = favoriteWeather[fav.key];
           const title = fav.name;
-          console.log(weather);
           if (isEmpty(weather)) return <h1 key={fav.key}>loading...</h1>;
           return (
             <Grid key={fav.key} item xs={"auto"}>

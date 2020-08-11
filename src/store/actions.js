@@ -71,53 +71,61 @@ export const fetchWeather = (locationCode) => async (dispatch) => {
     console.log("Got an error!", JSON.stringify(err));
   }
 };
-export const fetchOneDayWeather = (locationCodes) => async (dispatch) => {
-  const allWeather = {};
+// export const fetchOneDayWeather = (locationCodes) => (dispatch) => {
+//   const allWeather = {};
+//   try {
+//     locationCodes.forEach(async (locationCode) => {
+//       const url = fetchOneDayWeatherURL(locationCode);
+//       const response = await axios.get(url);
+//       const parsedResponse = {
+//         DailyForecasts: response.data.DailyForecasts.map((dayForcast) => {
+//           return {
+//             Date: dayForcast.Date,
+//             Unit: dayForcast.Temperature.Minimum.Unit,
+//             Temperature: {
+//               Minimum: dayForcast.Temperature.Minimum.Value,
+//               Maximum: dayForcast.Temperature.Maximum.Value,
+//             },
+//             Day: {
+//               Icon: dayForcast.Day.Icon,
+//               IconPhrase: dayForcast.Day.IconPhrase,
+//               HasPrecipitation: dayForcast.Day.HasPrecipitation,
+//             },
+//             Night: {
+//               Icon: dayForcast.Night.Icon,
+//               IconPhrase: dayForcast.Night.IconPhrase,
+//               HasPrecipitation: dayForcast.Night.HasPrecipitation,
+//             },
+//           };
+//         }),
+//       };
+//       allWeather[locationCode] = parsedResponse.DailyForecasts[0];
+//     });
+//     return dispatch({
+//       type: "FETCH_ONE_DAY_WEATHER",
+//       payload: allWeather,
+//     });
+//   } catch (err) {
+//     console.log("Got an error!", JSON.stringify(err));
+//   }
+// };
+export const fetchOneDayWeather = (locationCodes) => (dispatch) => {
   try {
-    locationCodes.map(async (locationCode) => {
+    locationCodes.forEach(async (locationCode) => {
       const url = fetchOneDayWeatherURL(locationCode);
       const response = await axios.get(url);
-      const parsedResponse = {
-        DailyForecasts: response.data.DailyForecasts.map((dayForcast) => {
-          return {
-            Date: dayForcast.Date,
-            Unit: dayForcast.Temperature.Minimum.Unit,
-            Temperature: {
-              Minimum: dayForcast.Temperature.Minimum.Value,
-              Maximum: dayForcast.Temperature.Maximum.Value,
-            },
-            Day: {
-              Icon: dayForcast.Day.Icon,
-              IconPhrase: dayForcast.Day.IconPhrase,
-              HasPrecipitation: dayForcast.Day.HasPrecipitation,
-            },
-            Night: {
-              Icon: dayForcast.Night.Icon,
-              IconPhrase: dayForcast.Night.IconPhrase,
-              HasPrecipitation: dayForcast.Night.HasPrecipitation,
-            },
-          };
-        }),
-      };
-      allWeather[locationCode] = parsedResponse.DailyForecasts[0];
-    });
-    return dispatch({
-      type: "FETCH_ONE_DAY_WEATHER",
-      payload: allWeather,
+      return dispatch({
+        type: "FETCH_ONE_DAY_WEATHER",
+        payload: { response: response.data, locationCode },
+      });
     });
   } catch (err) {
     console.log("Got an error!", JSON.stringify(err));
   }
 };
-
-export const toggleLocationToFavorite = (favoriteItem) => (
-  dispatch,
-  getState
-) => {
-  const { favorite } = getState();
-  const newFavorite = xorBy([...favorite], [favoriteItem], "key");
+export const toggleLocationToFavorite = (favoriteItem) => (dispatch) => {
   return dispatch({
     type: "TOGGLE_FAVORITE",
-    payload: newFavorite,
+    payload: favoriteItem,
   });
 };

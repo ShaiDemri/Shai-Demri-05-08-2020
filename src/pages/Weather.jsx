@@ -39,7 +39,7 @@ const Weather = ({
   const onSearchClick = React.useCallback(() => {
     const isFavorite =
       favorite.filter((place) => place.key === locationKey).length > 0;
-    setToggleFavorite(isFavorite);
+    setToggleFavorite(false);
     fetchLocationCode(searchTerm);
   }, [favorite, fetchLocationCode, locationKey, searchTerm]);
 

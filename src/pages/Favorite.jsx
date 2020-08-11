@@ -7,12 +7,12 @@ import { fetchOneDayWeather as fetchFavoriteWeatherAction } from "../store/actio
 import FavoriteCard from "../components/FavoriteCard";
 
 const Favorite = ({ favorite, favoriteWeather, fetchFavoriteWeather }) => {
-  React.useEffect(() => {
+  const fetchFavoritesWeather = React.useCallback(async () => {
     const favoriteCodes = favorite.map((f) => f.key);
-    const fetchWeather = async () => {
-      await fetchFavoriteWeather(favoriteCodes);
-    };
-    fetchWeather();
+    await fetchFavoriteWeather(favoriteCodes);
+  }, [favorite, fetchFavoriteWeather]);
+  React.useEffect(() => {
+    fetchFavoritesWeather();
   }, []);
 
   return (
