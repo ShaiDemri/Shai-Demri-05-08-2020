@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4f7138c236a204f88769a67559b287c9",
+    "revision": "5f4613c37a0e34ef5d0bd4388a25e9cd",
     "url": "/Shai-Demri-05-08-2020/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Shai-Demri-05-08-2020/static/js/0.571828e0.chunk.js"
   },
   {
-    "revision": "b5c907805047b227bed3",
-    "url": "/Shai-Demri-05-08-2020/static/js/3.56be9c7a.chunk.js"
+    "revision": "766cb3ca2f73f4ee94f8",
+    "url": "/Shai-Demri-05-08-2020/static/js/3.801dda17.chunk.js"
   },
   {
     "revision": "89b0379e7bcda1a468d8b0343aeb4e53",
-    "url": "/Shai-Demri-05-08-2020/static/js/3.56be9c7a.chunk.js.LICENSE.txt"
+    "url": "/Shai-Demri-05-08-2020/static/js/3.801dda17.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "88d2b69f416d87bda28c",
-    "url": "/Shai-Demri-05-08-2020/static/js/4.862bdcf7.chunk.js"
+    "revision": "0da4ab569ecaba8f150c",
+    "url": "/Shai-Demri-05-08-2020/static/js/4.b67b7f38.chunk.js"
   },
   {
     "revision": "a14ce7b8b407b31dbf5f",
@@ -40,12 +40,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Shai-Demri-05-08-2020/static/js/8.2363adcd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2f87171acf713d113c50",
-    "url": "/Shai-Demri-05-08-2020/static/js/main.1be50940.chunk.js"
+    "revision": "17a36200ad5c5e3be84f",
+    "url": "/Shai-Demri-05-08-2020/static/js/main.b7cb0d2a.chunk.js"
   },
   {
-    "revision": "32c14feaa24d16b667b1",
-    "url": "/Shai-Demri-05-08-2020/static/js/runtime-main.a09e145a.js"
+    "revision": "c952600d2dfbb5413b7b",
+    "url": "/Shai-Demri-05-08-2020/static/js/runtime-main.70d4f4a1.js"
   },
   {
     "revision": "93430c7d951241623a2de4bd7ecc809f",
