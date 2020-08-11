@@ -17,4 +17,4 @@ and add it to your .env file as REACT_APP_API_KEY = "your-api-key"
 
 ---
 
-[here]: (https://shaidemri.github.io/Shai-Demri-05-08-2020/)
+[here]: https://shaidemri.github.io/Shai-Demri-05-08-2020/
