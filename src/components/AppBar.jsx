@@ -2,8 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import {
   makeStyles,
-  FormControlLabel,
-  Switch,
+  Tooltip,
   AppBar,
   Toolbar,
   IconButton,
@@ -15,6 +14,10 @@ import {
   ListItemText,
   Grid,
 } from "@material-ui/core";
+import {
+  Brightness2 as Brightness2Icon,
+  Brightness5 as Brightness5Icon,
+} from "@material-ui/icons/";
 import { Link } from "react-router-dom";
 
 import {
@@ -152,16 +155,15 @@ const TopBar = ({ colorScheme, setColorScheme }) => {
           </Grid>
 
           <Grid item>
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={colorScheme === "dark"}
-                  onChange={handleChange}
-                  name="darkMode"
-                />
-              }
-              label="Dark Mode"
-            />
+            <Tooltip title="Toggle dark mode">
+              <IconButton onClick={handleChange}>
+                {colorScheme === "dark" ? (
+                  <Brightness2Icon />
+                ) : (
+                  <Brightness5Icon />
+                )}
+              </IconButton>
+            </Tooltip>
           </Grid>
         </Grid>
       </Toolbar>
